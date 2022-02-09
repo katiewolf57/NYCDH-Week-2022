@@ -880,9 +880,9 @@ Let's understand modules, libraries, and packages
 
 ## to use a m/l/p you've imported, simply call it! 
 
-import random
+# import random
 
-print(random.randint(0,9))
+# print(random.randint(0,9))
 
 
 
