@@ -30,7 +30,7 @@ An intro to the basic buidling blocks of Python
 
 ## Variables ##
 
-# ## x is the variable
+## x is the variable
 # x = "hello"
 # print(x)
 
@@ -40,7 +40,7 @@ An intro to the basic buidling blocks of Python
 
 # ## can assign many values to a variable
 # ## but be careful! this results in a tuple data tupe
-# testing = 6, 8, 9
+# testing = 6, 8, 9, 10
 # print(testing)
 # print(type(testing))
 
@@ -159,6 +159,8 @@ Indexing + Slicing + Counting
 # print(a_list[-1])
 
 # print(a_list[-3])
+
+# print(a_list[-7])
 
 
 ## Slicing ##
@@ -681,7 +683,7 @@ Python will treat them all as seperate sets of instructions
 # elif z == x or z == y:
 # 	pass
 # else:
-# 	("I'm not sure what's going on with z!")
+# 	("I'm not sure what's  on with z!")
 
 
 
@@ -867,7 +869,86 @@ It's FOR the best to know FOR LOOPS
 # 	print('~~~~~')
 
 
+"""
+~~~
+Opening Up! 
+Opening, editing, and saving files in Python
+~~~
 
+"""
+
+
+
+## let's look at an existing file
+# ## I'm using the absolute path - or the whole entire path - to direct to my file here
+# f = open("/Users/katielaurenwolf/Desktop/gentle_intro/my_file.txt", "r")
+# print(f.read())
+# print(f.readlines())
+# f.close()
+
+
+
+# ## if my file is stored in the same folder where I'm sitting in my command line/terminal
+# ## I don't have to do that This can get a bit fuzzy, I recommend either using the absolute path
+# ## or storing your code and files in the same place for now
+
+# f2 = open("my_file.txt", "r")
+# print(f2.read(10))
+# print(f2.readline())
+# f2.close()
+
+# ## as you can see, the read methods take in to account what has already been printed! 
+
+# ## if you want a more flexible experience with the content
+# ## try assigning the entire file's contents to a variable
+
+# f = open("my_file.txt", "r")
+# content = f.read()
+# print(content)
+# print(content[0]) # <- this will print the first character! 
+# print(type(content)) # this is a string! 
+# f.close()
+
+# f = open("my_file.txt", "r")
+# lines = f.readlines()
+# print(lines)
+# print(lines[0]) # this will print the entire first line
+# print(type(lines)) # this is a list! 
+# f.close()
+
+# # # now let's try editing a file
+
+# f = open("my_file.txt", "w") # note the new mode we're using
+# f.write("Some new stuff now.")
+# # lines = f.readlines()
+# ## we get an error, why???
+# ## because we've opened it up in write mode, NOT read! 
+# ## let's close it and reopen
+# f.close()
+# f = open("my_file.txt", "r")
+# print(f.read())
+# # file is ONLY the new stuff
+
+# print('~~~~~~\n')
+
+# f = open("my_file.txt", "a") 
+# f.write("\na second line is added")
+# f.close()
+# f = open("my_file.txt", "r") 
+# print(f.read())
+# f.close()
+
+
+# print('~~~~~~\n')
+
+# # if you want to be able to do more, use a "+" mode - "a+", "w+", "r+"
+# ## also try using the *with statement* to have a more continuous interactive experience
+
+
+# with open("my_file.txt", "a+") as f:
+# 	f.write('\nbottom line')
+# 	f.seek(0) ## this returns the "reader" to the beginning of the file
+# 	print(f.read())
 
 """
 ~~~
@@ -882,7 +963,23 @@ Let's understand modules, libraries, and packages
 
 # import random
 
-# print(random.randint(0,9))
+# print(random.randint(0,9)) ## the random module has a bunch of different methods! randint(range start, range end) is one of them
+# when you want to use a METHOD that belongs to an m/l/p, the sytnax is: 
+# module.method() <- the name of the m/l/p followed by a "." and then the method
+
+"""
+IMPORTANT NOTE
+almost all modules, libraries, and packages come with their own set of methods and uses
+It can take a long time to get familiar, and no one expects you to memorize! 
+There's SO MUCH documentation out there, so you can always look up what you forget
+The key is understanding which general areas different m/l/p's are good for! 
+If you ever are struggling to figure out how to do something from scratch
+GOOGLE IT!!! 
+It's totally allowed! 
+There most likely is a m/l/p that addresses the issue you're having!
+And even better there's probably someone else who had the same problem and shared their solution with the world. 
+And when in doubt read it out! (This means go to the documentation for the module :) )
+"""
 
 
 
